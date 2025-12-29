@@ -1,21 +1,20 @@
 return {
- "stevearc/conform.nvim",
- dependencies = {
-  "williamboman/mason.nvim",
-  "zapling/mason-conform.nvim",
- },
- config = function()
-  local conform = require("conform")
+	"stevearc/conform.nvim",
+	dependencies = {
+		"williamboman/mason.nvim",
+		"zapling/mason-conform.nvim",
+	},
+	config = function()
+		local conform = require("conform")
 
-  conform.setup({
-   formatters_by_ft = {
-    lua = { "stylua" },
+		conform.setup({
+			formatters_by_ft = {
+				lua = { "stylua" },
 
-    python = { "isort", "black" },
-   },
-  })
+				python = { "isort", "ruff" },
+			},
+		})
 
-  require("mason-conform").setup({})
- end,
+		require("mason-conform").setup({})
+	end,
 }
-

@@ -27,23 +27,22 @@ vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>", { desc = "Quickfix Next" })
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>", { desc = "Quickfix Prev" })
 
 vim.keymap.set("v", "<leader>cs", function()
- vim.cmd('normal! "zy')
- local pattern = vim.fn.escape(vim.fn.getreg("z"), "\\/.*$^~[]")
- local cmd = ":s/" .. pattern .. "//gI"
- local keys = vim.api.nvim_replace_termcodes(cmd .. "<Left><Left><Left>", true, false, true)
- vim.fn.feedkeys(keys, "t")
+	vim.cmd('normal! "zy')
+	local pattern = vim.fn.escape(vim.fn.getreg("z"), "\\/.*$^~[]")
+	local cmd = ":s/" .. pattern .. "//gI"
+	local keys = vim.api.nvim_replace_termcodes(cmd .. "<Left><Left><Left>", true, false, true)
+	vim.fn.feedkeys(keys, "t")
 end, { desc = "Substitute selection in line" })
 
 vim.keymap.set("v", "<leader>cgs", function()
- vim.cmd('normal! "zy')
- local pattern = vim.fn.escape(vim.fn.getreg("z"), "\\/.*$^~[]")
- local cmd = ":%s/" .. pattern .. "//gI"
- local keys = vim.api.nvim_replace_termcodes(cmd .. "<Left><Left><Left>", true, false, true)
- vim.fn.feedkeys(keys, "t")
+	vim.cmd('normal! "zy')
+	local pattern = vim.fn.escape(vim.fn.getreg("z"), "\\/.*$^~[]")
+	local cmd = ":%s/" .. pattern .. "//gI"
+	local keys = vim.api.nvim_replace_termcodes(cmd .. "<Left><Left><Left>", true, false, true)
+	vim.fn.feedkeys(keys, "t")
 end, { desc = "Substitute selection in file" })
 
 vim.keymap.set("n", "<leader>cu", "<cmd>s//\\u~/i<CR>", { desc = "Case switched recent substitution" })
 vim.keymap.set("n", "<leader>cgu", "<cmd>%s//\\u~/i<CR>", { desc = "Case switched global recent substitution" })
 
 vim.keymap.set("n", "<leader>ct", "<cmd>!go mod tidy<CR>", { desc = "Go mod tidy" })
-
