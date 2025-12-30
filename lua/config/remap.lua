@@ -7,6 +7,7 @@ vim.keymap.set("n", "<leader>bo", "<cmd>%bd|e#<CR>", { desc = "Buffer Delete Oth
 vim.keymap.set("n", "<leader>ba", "<cmd>%bd<CR>", { desc = "Buffer Delete All" })
 vim.keymap.set("n", "<leader>o", "<cmd>update<CR> :source<CR>", { desc = "Source File" })
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Oil" })
+-- vim.keymap.set("n", "<leader>t", "<cmd>vsplit | terminal<CR>", { desc = "Open Terminal" })
 vim.keymap.set({ "n", "v", "x" }, "<leader>y", [["+y]], { desc = "Yank Clipboard" })
 vim.keymap.set({ "n", "v", "x" }, "<leader>p", [["+p]], { desc = "Paste Clipboard" })
 vim.keymap.set({ "n", "v", "x" }, "<leader>d", [["_d]], { desc = "Delete into void" })
@@ -44,5 +45,3 @@ end, { desc = "Substitute selection in file" })
 
 vim.keymap.set("n", "<leader>cu", "<cmd>s//\\u~/i<CR>", { desc = "Case switched recent substitution" })
 vim.keymap.set("n", "<leader>cgu", "<cmd>%s//\\u~/i<CR>", { desc = "Case switched global recent substitution" })
-
-vim.keymap.set("n", "<leader>ct", "<cmd>!go mod tidy<CR>", { desc = "Go mod tidy" })
