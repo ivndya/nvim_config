@@ -37,6 +37,7 @@ vim.o.updatetime = 50
 vim.opt.hidden = false
 
 vim.o.splitright = true
+vim.opt.wrap = true
 
 require("config.autocmds")
 
